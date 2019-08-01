@@ -36,7 +36,23 @@ class App extends Component {
     const {todos} = this.state;
     const newTodos = [...todos, todo]
     this.setState({todos: newTodos})
+    this.postTodo(todo)
   }
+
+  postTodo = (todo) => {
+    const url = 'http://localhost:8004/api/todos'
+    const body = {...todo}
+    const options = {
+      method: 'POST',
+      mode: 'cors',
+      headers: { 'Content-type': 'application/json' },
+      body: JSON.stringify(body)
+    }
+    fetch(url, options)
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => this.setError(error))
+  };
 
   render() {
     const { todos, error } = this.state
@@ -44,6 +60,7 @@ class App extends Component {
       <div className="App">
         <h1>ToDo List</h1>
         <Form addTodo={this.addTodo} />
+        {error && <p>{error}</p>}
         { todos.length && <CardContainer todos={todos} /> }
       </div>
     )

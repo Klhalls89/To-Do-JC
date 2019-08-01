@@ -7,6 +7,7 @@ const Card = (props) => {
       <p>{todo.description}</p>
       {todo.done === true && <p>all done</p>}
       {todo.done === false && <p>not done</p>}
+      <button>X</button>
     </div>
   )
 };
