@@ -2,10 +2,13 @@ import React from 'react';
 import Card from '../Card/Card'
 
 const CardContainer = (props) => {
+  const { todos } = props
+  const displayCards = todos.map(todo => {
+    return <Card key={todo.id} todo={todo} />
+  })
   return (
     <div>
-      <h3>CardContainer</h3>
-      <Card />
+      {displayCards}
     </div>
   )
 };
