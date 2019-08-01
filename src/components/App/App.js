@@ -12,7 +12,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.fetchTodos()
+    this.fetchTodos();
   };
 
   fetchTodos = () => {
@@ -31,12 +31,19 @@ class App extends Component {
     this.setState({error})
   };
 
+  addTodo = (todoItem) => {
+    const todo = {description: todoItem, id:Date.now(), done: false}
+    const {todos} = this.state;
+    const newTodos = [...todos, todo]
+    this.setState({todos: newTodos})
+  }
+
   render() {
     const { todos, error } = this.state
     return (
       <div className="App">
         <h1>ToDo List</h1>
-        <Form />
+        <Form addTodo={this.addTodo} />
         { todos.length && <CardContainer todos={todos} /> }
       </div>
     )
