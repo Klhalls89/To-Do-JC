@@ -5,6 +5,7 @@ const CardContainer = (props) => {
   return (
     <div>
       <h3>CardContainer</h3>
+      <Card />
     </div>
   )
 };
