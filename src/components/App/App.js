@@ -6,9 +6,22 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      todos: []
+      todos: [],
+      error: ''
     };
   };
+
+  componentDidMount() {
+    this.fetchTodos()
+  }
+
+  fetchTodos = () => {
+    const url = 'http://localhost:8004/api/todos'
+    fetch(url)
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.log(error))
+  }
 
   render() {
     return (
