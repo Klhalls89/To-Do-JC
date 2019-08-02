@@ -54,6 +54,36 @@ class App extends Component {
       .catch(error => this.setError(error))
   };
 
+  editTodo = (id) => {
+   
+  };
+
+  updateTodo = (todo) => {
+  
+  };
+
+  removeTodo = (id) => {
+    const { todos } = this.state
+    const curatedTodos = todos.filter(todo => {
+      return todo.id !== id
+    });
+    this.setState({todos: curatedTodos})
+    this.deleteTodo(id)
+  };
+
+  deleteTodo = (id) => {
+    const url = `http://localhost:8004/api/todos/${id}`
+    const options = {
+      method: 'DELETE',
+      mode: 'cors',
+      headers: { 'Content-Type': 'application/json' },
+    }
+    fetch(url, options)
+      .then(response => response.json)
+      .then(data => console.log(data))
+      .catch(error => console.log(error))
+  };
+
   render() {
     const { todos, error } = this.state
     return (
@@ -61,7 +91,7 @@ class App extends Component {
         <h1>ToDo List</h1>
         <Form addTodo={this.addTodo} />
         {error && <p>{error}</p>}
-        { todos.length && <CardContainer todos={todos} /> }
+        { todos.length && <CardContainer removeTodo={this.removeTodo} editTodo={this.editTodo} todos={todos} /> }
       </div>
     )
   };
