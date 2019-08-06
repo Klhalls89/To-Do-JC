@@ -54,12 +54,22 @@ class App extends Component {
       .catch(error => this.setError(error))
   };
 
-  editTodo = (id) => {
-   
-  };
+  putTodo = (todo) => {
+    console.log('putTodo', todo)
+    const {id} = todo
+    const url = `http://localhost:8004/api/todos/${id}`
 
-  updateTodo = (todo) => {
-  
+    const body = {...todo}
+    const options = {
+      method: 'PUT',
+      mode: 'cors',
+      headers: { 'Content-type': 'application/json' },
+      body: JSON.stringify(body)
+  }
+    fetch(url, options)
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => this.setError(error))
   };
 
   removeTodo = (id) => {
@@ -80,7 +90,7 @@ class App extends Component {
     }
     fetch(url, options)
       .then(response => response.json)
-      .then(data => console.log(data))
+      // .then(data => console.log(data))
       .catch(error => console.log(error))
   };
 
@@ -91,7 +101,7 @@ class App extends Component {
         <h1>ToDo List</h1>
         <Form addTodo={this.addTodo} />
         {error && <p>{error}</p>}
-        { todos.length && <CardContainer removeTodo={this.removeTodo} editTodo={this.editTodo} todos={todos} /> }
+        { todos.length && <CardContainer removeTodo={this.removeTodo} putTodo={this.putTodo} todos={todos} /> }
       </div>
     )
   };
