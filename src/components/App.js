@@ -96,7 +96,7 @@ class App extends Component {
     const { todos, error } = this.state
     return (
       <div className="App">
-        <h1>ToDo List</h1>
+        <h1><i class="fas fa-otter"></i>Otter do</h1>
         <Form addTodo={this.addTodo} />
         {error && <p>{error}</p>}
         { todos.length && <CardContainer removeTodo={this.removeTodo} putTodo={this.putTodo} todos={todos} /> }

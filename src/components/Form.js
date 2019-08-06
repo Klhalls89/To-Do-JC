@@ -24,7 +24,7 @@ class Form extends Component {
     const { description } = this.state
     return (
       <form onSubmit={(e) => this.handleSubmit(e)}>
-        <h2>Add ToDo</h2>
+        <h2>add to do</h2>
         <input onChange={(e) => this.handleChange(e)} type="text" value={description} />
         <button onClick={(e) => this.handleSubmit(e)}>Submit ToDo</button>
       </form>
