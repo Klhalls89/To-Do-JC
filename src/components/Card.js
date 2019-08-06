@@ -26,9 +26,9 @@ class Card extends Component {
     const { id, done, description } = this.state
   
     return (
-      <div className="Card"> 
-        <h3><i class="fas fa-fish"></i> to do:</h3>
-        <input className="style-description" type="text" value={description} onChange={(e) => this.editTodo(e)}></input>
+      <div className="card"> 
+        <h3><i className="fas fa-asterisk"></i> to do:</h3>
+        <input maxlength="30" className="style-description" type="text" value={description} onChange={(e) => this.editTodo(e)}></input>
         {done === true && <button onClick={() => this.toggleTodo()}><i className="far fa-check-square"></i></button>}
         {done === false && <button onClick={() => this.toggleTodo()}><i className="far fa-square"></i></button>}
         <button onClick={() => removeTodo(id)}><i className="fas fa-times"></i></button>

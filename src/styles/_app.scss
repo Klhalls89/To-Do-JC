@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  background-image: linear-gradient(white, $aqua);
+  height: 99.9vh;
+
+  header {
+    display: flex;
+  }
+
+  h1 {
+    color: $ocean;
+    display: inline;
+  }
+
+  .fa-otter {
+    color: $brown;
+  }
+}
+

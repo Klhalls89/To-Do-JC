@@ -95,8 +95,8 @@ class App extends Component {
   render() {
     const { todos, error } = this.state
     return (
-      <div className="App">
-        <h1><i class="fas fa-otter"></i>otter do</h1>
+      <div className="app">
+        <div className="header"><i className="fas fa-otter"></i><h1>otter do</h1></div>
         {error && <h4>error}</h4>}
         <Form addTodo={this.addTodo} />
         {error && <p>{error}</p>}

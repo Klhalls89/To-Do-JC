@@ -7,7 +7,7 @@ const CardContainer = (props) => {
     return <Card removeTodo={removeTodo} putTodo={putTodo} key={todo.id} todo={todo} />
   })
   return (
-    <div className="card-container">
+    <div className="container">
       {displayCards}
     </div>
   )

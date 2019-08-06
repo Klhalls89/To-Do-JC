@@ -25,9 +25,8 @@ class Form extends Component {
     return (
       <form onSubmit={(e) => this.handleSubmit(e)}>
         <h2>add to do</h2>
-        <input onChange={(e) => this.handleChange(e)} type="text" value={description} />
+        <input maxlength="30" onChange={(e) => this.handleChange(e)} type="text" value={description} />
         <button onClick={(e) => this.handleSubmit(e)}>Submit ToDo</button>
-        <i class="fas fa-water"></i>
       </form>
     )
   };
