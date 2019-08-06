@@ -27,6 +27,7 @@ class Card extends Component {
   
     return (
       <div className="Card"> 
+        <h3><i class="fas fa-fish"></i> to do:</h3>
         <input className="style-description" type="text" value={description} onChange={(e) => this.editTodo(e)}></input>
         {done === true && <button onClick={() => this.toggleTodo()}><i className="far fa-check-square"></i></button>}
         {done === false && <button onClick={() => this.toggleTodo()}><i className="far fa-square"></i></button>}

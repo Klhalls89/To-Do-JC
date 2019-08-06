@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import CardContainer from '../CardContainer/CardContainer'
-import Form from '../Form/Form'
+import CardContainer from './CardContainer'
+import Form from './Form'
 
 class App extends Component {
   constructor() {
@@ -96,7 +96,8 @@ class App extends Component {
     const { todos, error } = this.state
     return (
       <div className="App">
-        <h1><i class="fas fa-otter"></i>Otter do</h1>
+        <h1><i class="fas fa-otter"></i>otter do</h1>
+        {error && <h4>error}</h4>}
         <Form addTodo={this.addTodo} />
         {error && <p>{error}</p>}
         { todos.length && <CardContainer removeTodo={this.removeTodo} putTodo={this.putTodo} todos={todos} /> }
