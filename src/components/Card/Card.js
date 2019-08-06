@@ -10,8 +10,9 @@ class Card extends Component {
     }
   }
 
-  editTodo = () => {
-
+  editTodo = (e) => {
+    const { putTodo } = this.props
+    this.setState({description: e.target.value}, () => putTodo(this.state))
   }
 
   toggleTodo = () => {
@@ -25,12 +26,11 @@ class Card extends Component {
     const { id, done, description } = this.state
   
     return (
-      <div> 
-        <p>{description}</p>
+      <div className="Card"> 
+        <input className="style-description" type="text" value={description} onChange={(e) => this.editTodo(e)}></input>
         {done === true && <button onClick={() => this.toggleTodo()}><i className="far fa-check-square"></i></button>}
         {done === false && <button onClick={() => this.toggleTodo()}><i className="far fa-square"></i></button>}
         <button onClick={() => removeTodo(id)}><i className="fas fa-times"></i></button>
-        <button onClick={() => this.editTodo(id)}><i className="fas fa-pencil-alt"></i></button>
       </div>
   )};
 };

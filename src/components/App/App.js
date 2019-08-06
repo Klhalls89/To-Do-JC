@@ -50,15 +50,13 @@ class App extends Component {
     }
     fetch(url, options)
       .then(response => response.json())
-      .then(data => console.log(data))
+      .then(data => console.log(data)) 
       .catch(error => this.setError(error))
   };
 
   putTodo = (todo) => {
-    console.log('putTodo', todo)
     const {id} = todo
     const url = `http://localhost:8004/api/todos/${id}`
-
     const body = {...todo}
     const options = {
       method: 'PUT',
@@ -90,8 +88,8 @@ class App extends Component {
     }
     fetch(url, options)
       .then(response => response.json)
-      // .then(data => console.log(data))
-      .catch(error => console.log(error))
+      .then(data => console.log(data))
+      .catch(error => this.setError(error))
   };
 
   render() {
