@@ -1,33 +1,33 @@
 form {
+  align-items: center;
+  background-color: $ltaqua;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center; 
   margin: auto;
-  background-color: $ltaqua;
-  width: 300px;
-  border-radius: 15px;
   padding: 10px;
+  width: 300px;
 
   input {
-    border: 0;
     border-radius: 15px;
-    height: 3rem;
-    width: 90%;
-    margin-bottom: 10px;
+    border: 0;
     font-size: 1.5rem;
+    height: 3rem;
+    margin-bottom: 10px;
+    width: 90%;
   }
 
   button {
-    height: 3rem;
-    width: 90%;
-    font-family: $main;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: normal;
-    border: 0;
     background-color: $coral;
     border-radius: 15px;
+    border: 0;
+    color: white;
+    font-family: $main;
+    font-size: 1.5rem;
+    font-weight: normal;
+    height: 3rem;
+    width: 90%;
   }
 
   button:hover {

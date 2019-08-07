@@ -1,9 +1,9 @@
 * {
   box-sizing: border-box;
-  text-align: center;
+  font-family: $main;
   margin: 0;
   padding: 0;
-  font-family: $main;
+  text-align: center;
 }
 
 .app {
@@ -12,11 +12,10 @@
   width: 100%;
 
   .header {
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: center;
-    margin-bottom: 10px; 
-
+    margin: 10px; 
   }
 
   img {
@@ -24,11 +23,10 @@
   }
 
   h1 {
-    font-size: 3.5rem;
     color: $ocean;
     display: inline;
     font-family: $logo;
+    font-size: 3.5rem;
   }
-
 }
 

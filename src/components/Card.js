@@ -7,23 +7,23 @@ class Card extends Component {
       description: todo.description,
       done: todo.done,
       id: todo.id
-    }
-  }
+    };
+  };
 
   editTodo = (e) => {
-    const { putTodo } = this.props
-    this.setState({description: e.target.value}, () => putTodo(this.state))
-  }
+    const { putTodo } = this.props;
+    this.setState({description: e.target.value}, () => putTodo(this.state));
+  };
 
   toggleTodo = () => {
-    const { putTodo } = this.props
-    const { done } = this.state
-    this.setState({done: !done}, () => putTodo(this.state))
-  }
+    const { putTodo } = this.props;
+    const { done } = this.state;
+    this.setState({done: !done}, () => putTodo(this.state));
+  };
       
   render () {
-    const { removeTodo } = this.props
-    const { id, done, description } = this.state
+    const { removeTodo } = this.props;
+    const { id, done, description } = this.state;
   
     return (
       <section className="card"> 

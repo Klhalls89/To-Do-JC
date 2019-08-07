@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import CardContainer from './CardContainer'
-import Form from './Form'
+import CardContainer from './CardContainer';
+import Form from './Form';
 
 class App extends Component {
   constructor() {
@@ -12,7 +12,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.fetchTodos();
+    this.fetchTodos()
   };
 
   fetchTodos = () => {
@@ -24,30 +24,30 @@ class App extends Component {
   };
 
   setTodos = (todos) => {
-    this.setState({todos})
+    this.setState({todos});
   };
 
   setError = (error) => {
-    this.setState({error})
+    this.setState({error});
   };
 
   addTodo = (todoItem) => {
-    const todo = {description: todoItem, id:Date.now(), done: false}
+    const todo = {description: todoItem, id:Date.now(), done: false};
     const {todos} = this.state;
-    const newTodos = [...todos, todo]
-    this.setState({todos: newTodos})
-    this.postTodo(todo)
-  }
+    const newTodos = [...todos, todo];
+    this.setState({todos: newTodos});
+    this.postTodo(todo);
+  };
 
   postTodo = (todo) => {
-    const url = 'http://localhost:8004/api/todos'
-    const body = {...todo}
+    const url = 'http://localhost:8004/api/todos';
+    const body = {...todo};
     const options = {
       method: 'POST',
       mode: 'cors',
       headers: { 'Content-type': 'application/json' },
       body: JSON.stringify(body)
-    }
+    };
     fetch(url, options)
       .then(response => response.json())
       .then(data => console.log(data)) 
@@ -55,15 +55,15 @@ class App extends Component {
   };
 
   putTodo = (todo) => {
-    const {id} = todo
-    const url = `http://localhost:8004/api/todos/${id}`
-    const body = {...todo}
+    const {id} = todo;
+    const url = `http://localhost:8004/api/todos/${id}`;
+    const body = {...todo};
     const options = {
       method: 'PUT',
       mode: 'cors',
       headers: { 'Content-type': 'application/json' },
       body: JSON.stringify(body)
-  }
+  };
     fetch(url, options)
       .then(response => response.json())
       .then(data => console.log(data))
@@ -71,21 +71,21 @@ class App extends Component {
   };
 
   removeTodo = (id) => {
-    const { todos } = this.state
+    const { todos } = this.state;
     const curatedTodos = todos.filter(todo => {
       return todo.id !== id
     });
-    this.setState({todos: curatedTodos})
-    this.deleteTodo(id)
+    this.setState({todos: curatedTodos});
+    this.deleteTodo(id);
   };
 
   deleteTodo = (id) => {
-    const url = `http://localhost:8004/api/todos/${id}`
+    const url = `http://localhost:8004/api/todos/${id}`;
     const options = {
       method: 'DELETE',
       mode: 'cors',
       headers: { 'Content-Type': 'application/json' },
-    }
+    };
     fetch(url, options)
       .then(response => response.json)
       .then(data => console.log(data))
@@ -93,11 +93,11 @@ class App extends Component {
   };
 
   render() {
-    const { todos, error } = this.state
+    const { todos, error } = this.state;
     return (
       <section className="app">
         <article className="header">
-        <img src={require('../styles/otter.png')} />
+        <img alt="otter cartoon" src={require('../styles/otter.png')} />
           <h1>otter do</h1>
         </article>
         {error && <h4>error}</h4>}
@@ -105,7 +105,7 @@ class App extends Component {
         {error && <p>{error}</p>}
         { todos.length && <CardContainer removeTodo={this.removeTodo} putTodo={this.putTodo} todos={todos} /> }
       </section>
-    )
+    );
   };
 };
 
