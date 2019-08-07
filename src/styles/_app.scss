@@ -3,23 +3,31 @@
   text-align: center;
   margin: 0;
   padding: 0;
+  font-family: $main;
 }
 
 .app {
   background-image: linear-gradient(white, $aqua);
   height: 99.9vh;
+  width: 100%;
 
-  header {
+  .header {
     display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  img {
+    height: 120px;
   }
 
   h1 {
+    font-size: 3.5rem;
     color: $ocean;
     display: inline;
+    font-family: $logo;
   }
 
-  .fa-otter {
-    color: $brown;
-  }
 }
 

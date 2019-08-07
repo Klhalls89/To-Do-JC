@@ -24,9 +24,8 @@ class Form extends Component {
     const { description } = this.state
     return (
       <form onSubmit={(e) => this.handleSubmit(e)}>
-        <h2>add to do</h2>
-        <input maxlength="30" onChange={(e) => this.handleChange(e)} type="text" value={description} />
-        <button onClick={(e) => this.handleSubmit(e)}>Submit ToDo</button>
+        <input maxLength="30" onChange={(e) => this.handleChange(e)} type="text" value={description} />
+        <button onClick={(e) => this.handleSubmit(e)}> add to do</button>
       </form>
     )
   };

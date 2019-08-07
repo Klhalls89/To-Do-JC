@@ -95,13 +95,16 @@ class App extends Component {
   render() {
     const { todos, error } = this.state
     return (
-      <div className="app">
-        <div className="header"><i className="fas fa-otter"></i><h1>otter do</h1></div>
+      <section className="app">
+        <article className="header">
+        <img src={require('../styles/otter.png')} />
+          <h1>otter do</h1>
+        </article>
         {error && <h4>error}</h4>}
         <Form addTodo={this.addTodo} />
         {error && <p>{error}</p>}
         { todos.length && <CardContainer removeTodo={this.removeTodo} putTodo={this.putTodo} todos={todos} /> }
-      </div>
+      </section>
     )
   };
 };
