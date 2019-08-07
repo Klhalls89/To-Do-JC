@@ -22,5 +22,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   
 ## Thoughts on this process
 
-I liked this challenge overall. I have built an idea box like this in the past but this was the first time I have done it with an API back end. I did take some artistic liberties with the UI aspect of the project because I think it represents the kind of designer/developer/engineer I am. I made the otter logo myself, the layout is a combination of Grid/Flexbox in SCSS with media queries for different screen sizes. I used React because, while I have done a project in Vue before, I was most comfortable with React. I know that React is moving away from class based components and toward hooks however, I haven't used them before and I was hesitant to use this project as my guinea pig. I also had an issue getting the linter set up properly in this project so I linted by hand. On the whole I think it was a successful project with a friendly UI. 
+I liked this challenge overall. I have built an idea box like this in the past but this was the first time I have done it with an API back end.
+
+ I did take some artistic liberties with the UI aspect of the project because I think it represents the kind of designer/developer/engineer I am. I made the otter logo myself, the layout is a combination of Grid/Flexbox in SCSS with media queries for different screen sizes.
+ 
+I used React because, while I have done a project in Vue before, I was most comfortable with React. I know that React is moving away from class based components and toward hooks however, I haven't used them before and I was hesitant to use this project as my guinea pig. I also had an issue getting the linter set up properly in this project so I linted by hand. 
+
+For my GitHub repo I just used one branch, however if I was working with others I would have done feature branches with pull requests and code reviews.
+
+On the whole I think it was a quite successful project with a friendly UI. 
+
 
