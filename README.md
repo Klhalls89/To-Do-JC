@@ -9,7 +9,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   [Front-End](https://github.com/Klhalls89/otter-do)
   [Back-End](https://github.com/Klhalls89/otter-do-BE)
   
-* note that my Back-End is almost identical to [this](https://github.com/TheJumpCloud/jumpcloud-ui-assignment), except that I had to install CORS to enable my fetch call and I altered the start script to run the server in nodemon for quick reloading.
+Please note, that my Back-End is almost identical to [this](https://github.com/TheJumpCloud/jumpcloud-ui-assignment), except that I had to install CORS to enable my fetch call and I altered the start script to run the server in nodemon for quick reloading.
 
 ### `npm install`
   run npm install in both repos
