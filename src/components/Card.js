@@ -31,16 +31,17 @@ class Card extends Component {
         <input maxLength="30" 
               className="style-description" 
               type="text" value={description} 
-              onChange={(e) => this.editTodo(e)}></input>
-          <article>
-            {done === true && <button onClick={() => this.toggleTodo()}>
-              <i className="far fa-check-square"></i></button>}
-            {done === false && <button onClick={() => this.toggleTodo()}>
-              <i className="far fa-square"></i></button>}
-            <button onClick={() => removeTodo(id)}><i className="fas fa-times"></i></button>
-          </article>
+              onChange={(e) => this.editTodo(e)} />
+        <article>
+          { done === true && <button onClick={() => this.toggleTodo()}>
+            <i className="far fa-check-square"></i></button> }
+          { done === false && <button onClick={() => this.toggleTodo()}>
+            <i className="far fa-square"></i></button> }
+          <button onClick={() => removeTodo(id)}><i className="fas fa-times"></i></button>
+        </article>
       </section>
-  )};
+    );
+  };
 };
 
 export default Card;

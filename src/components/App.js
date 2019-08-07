@@ -63,7 +63,7 @@ class App extends Component {
       mode: 'cors',
       headers: { 'Content-type': 'application/json' },
       body: JSON.stringify(body)
-  };
+    };
     fetch(url, options)
       .then(response => response.json())
       .then(data => console.log(data))
@@ -94,15 +94,15 @@ class App extends Component {
 
   render() {
     const { todos, error } = this.state;
+    
     return (
       <section className="app">
         <article className="header">
-        <img alt="otter cartoon" src={require('../styles/otter.png')} />
+          <img alt="otter cartoon" src={require('../styles/otter.png')} />
           <h1>otter do</h1>
         </article>
-        {error && <h4>error}</h4>}
         <Form addTodo={this.addTodo} />
-        {error && <p>{error}</p>}
+        { error && <p>{error}</p> }
         { todos.length && <CardContainer removeTodo={this.removeTodo} putTodo={this.putTodo} todos={todos} /> }
       </section>
     );

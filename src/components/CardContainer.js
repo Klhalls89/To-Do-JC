@@ -6,6 +6,7 @@ const CardContainer = (props) => {
   const displayCards = todos.map(todo => {
     return <Card removeTodo={removeTodo} putTodo={putTodo} key={todo.id} todo={todo} />
   });
+  
   return (
     <div className="container">
       {displayCards}
