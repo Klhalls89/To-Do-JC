@@ -33,8 +33,10 @@ class Card extends Component {
               type="text" value={description} 
               onChange={(e) => this.editTodo(e)}></input>
           <article>
-            {done === true && <button onClick={() => this.toggleTodo()}><i className="far fa-check-square"></i></button>}
-            {done === false && <button onClick={() => this.toggleTodo()}><i className="far fa-square"></i></button>}
+            {done === true && <button onClick={() => this.toggleTodo()}>
+              <i className="far fa-check-square"></i></button>}
+            {done === false && <button onClick={() => this.toggleTodo()}>
+              <i className="far fa-square"></i></button>}
             <button onClick={() => removeTodo(id)}><i className="fas fa-times"></i></button>
           </article>
       </section>
